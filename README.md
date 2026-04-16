@@ -15,6 +15,25 @@ npm run dev
 
 → http://localhost:4321
 
+### 검색·프로덕션 동작 확인 (005)
+
+Starlight 검색(Pagefind)은 **빌드 결과**가 있어야 한다.
+
+```bash
+npm run build
+npm run preview
+```
+
+터미널에 나온 URL(기본 `http://localhost:4321`)로 연다.
+
+### `preview`에서 전 페이지가 404일 때
+
+1. `dist` 폴더 안에 **`index.html`이 있는지** 본다. 없으면 `npm run build`가 끝까지 돌지 않은 것이다.
+2. Windows에서 **OneDrive + 한글·공백 경로**일 때 `astro build`가 중도 종료(비정상 exit)되는 경우가 있다.
+3. **대처:** 프로젝트 폴더 전체를 **짧은 영문 경로**로 복사한다 — 예: `C:\dev\yohan-ai-dictionary` — 그 디렉터리에서 `npm install` 후 `npm run build` → `npm run preview`를 다시 실행한다.
+
+(대안: `subst`로 드라이브 문자를 잡아 같은 효과를 낼 수 있다.)
+
 ## 프로젝트 구조
 
 ```
